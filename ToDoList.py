@@ -4,7 +4,9 @@
 #       Remove a task
 #       Show all tasks in queue
 
-#TODO: Create a database to hold tasks for when user quits
+#TODO: Create a txt file/database to hold tasks for when user quits
+#TODO: Expand to include editing tasks
+#TODO: Build a GUI for this
 
 # String list to keep track of our tasks
 tasks = []
