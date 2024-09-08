@@ -4,6 +4,8 @@
 #       Remove a task
 #       Show all tasks in queue
 
+#TODO: Create a database to hold tasks for when user quits
+
 # String list to keep track of our tasks
 tasks = []
 
@@ -26,14 +28,14 @@ def rem_task():
 def display_tasks():
     if tasks:                                           # Check if the tasks list has content
         print("Your to-do list")
-        for index, task in enumerate(tasks, start=1):   # we create a for loop, have an index enumerate through each task in tasks, starting at the 1st entry
-            print(f"{index}. {task}")
+        for index, task in enumerate(tasks, start=1):   # we create a for loop for tasks with an index starting at 1 that increases with each loop
+            print(f"{index}. {task}")                   # Print each task with the format of index number followed by task name
     else:
-        print("Your to-do list is empty")
+        print("Your to-do list is empty")               # Print if the tasks list has no content
 
 # SHOW USER OPTIONS
 def get_display_choice():
-    return input("Enter 'A' to add a task, 'R' to remove a task, or 'D' to display all tasks").upper()
+    return input("Enter 'A' to add a task, 'R' to remove a task, 'D' to display all tasks, or 'Q' to quit:  ").upper() # upper() changes it so the input will always be uppercase
 
 
 # MAIN FUNCTION
@@ -46,6 +48,8 @@ def main():
             rem_task()
         elif choice == 'D':
             display_tasks()
+        elif choice == 'Q':
+            break
         else:
             print("Invalid choice. Please try again")
 
